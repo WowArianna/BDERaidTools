@@ -48,16 +48,22 @@ displayFrame:SetScript("OnUpdate", function(self, elapsed)
 end)
 
 -- Funktionen
-local function ShowNedFreilassen()
+local jesusShown = false
+
+local showJesus = function()
     currentRotation = 0
     if not BDE_RAID_TOOLS_DB.JESUS_ENABLED then return end
     displayFrame:Show()
     ag:Play()
+    jesusShown = true
+    print("|cff00ff00[BDE]|r Hello Jesus")
 end
 
-local function HideNedFreilassen()
+local hideJesus = function()
     displayFrame:Hide()
     ag:Stop()
+    jesusShown = false
+    print("|cff00ff00[BDE]|r Baba Jesus.")
 end
 
 -- Event-Frame
@@ -68,8 +74,27 @@ f:RegisterEvent("PLAYER_UNGHOST")
 
 f:SetScript("OnEvent", function(self, event)
     if event == "PLAYER_DEAD" then
-        ShowNedFreilassen()
+        BDE_RAID_TOOLS.showJesus()
     elseif event == "PLAYER_ALIVE" or event == "PLAYER_UNGHOST" then
-        HideNedFreilassen()
+        BDE_RAID_TOOLS.hideJesus()
     end
 end)
+
+
+---------------------------------------------------------
+-- Slash Commands
+---------------------------------------------------------
+SLASH_BDECMD1 = "/bdejesus"
+SlashCmdList["BDECMD"] = function(msg)
+    msg = msg:lower()
+
+    if msg == "show" then
+        showJesus()
+    elseif msg == "hide" then
+        hideJesus()
+    elseif true == jesusShown then
+        hideJesus()
+    elseif false == jesusShown then
+        showJesus()
+    end
+end
