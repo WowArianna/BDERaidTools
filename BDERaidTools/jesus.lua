@@ -74,12 +74,11 @@ f:RegisterEvent("PLAYER_UNGHOST")
 
 f:SetScript("OnEvent", function(self, event)
     if event == "PLAYER_DEAD" then
-        BDE_RAID_TOOLS.showJesus()
+        showJesus()
     elseif event == "PLAYER_ALIVE" or event == "PLAYER_UNGHOST" then
-        BDE_RAID_TOOLS.hideJesus()
+        hideJesus()
     end
 end)
-
 
 ---------------------------------------------------------
 -- Slash Commands
