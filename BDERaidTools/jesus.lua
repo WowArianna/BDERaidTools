@@ -56,14 +56,12 @@ local showJesus = function()
     displayFrame:Show()
     ag:Play()
     jesusShown = true
-    print("|cff00ff00[BDE]|r Hello Jesus")
 end
 
 local hideJesus = function()
     displayFrame:Hide()
     ag:Stop()
     jesusShown = false
-    print("|cff00ff00[BDE]|r Baba Jesus.")
 end
 
 -- Event-Frame
