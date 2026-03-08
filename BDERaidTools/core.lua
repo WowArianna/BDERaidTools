@@ -1,14 +1,10 @@
 local ADDON_NAME, ns = ...
 
 -- SavedVariable default
-BDE_MPLUS_SCORE_ENABLED = BDE_MPLUS_SCORE_ENABLED ~= true
-BDE_JESUS_ENABLED = BDE_JESUS_ENABLED ~= true
--- EXPOS_CombatTimer_Enabled = EXPOS_CombatTimer_Enabled ~= false
--- EXPOS_CombatTimer_Pos = EXPOS_CombatTimer_Pos or { x = 0, y = -100 }
-
 BDE_RAID_TOOLS_DB = BDE_RAID_TOOLS_DB or {
-    MPLUS_SCORE_ENABLED = true,
-    JESUS_ENABLED = true
+    MPLUS_SCORE_ENABLED = false,
+    JESUS_ENABLED = true,
+    CURSOR_CIRCLE = false,
 }
 
 BDE_RAID_TOOLS = BDE_RAID_TOOLS or {}

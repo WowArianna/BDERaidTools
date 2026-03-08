@@ -11,3 +11,4 @@ core.lua
 options.lua
 mplus.lua
 jesus.lua
+cursor.lua
