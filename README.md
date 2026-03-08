@@ -30,3 +30,7 @@ The tooltip is only displayed when:
 
 <img width="312" height="312" alt="grafik" src="https://github.com/user-attachments/assets/59cf7c33-011b-41d5-a500-e1ded5026d42" />
 
+## Circle around cursor
+
+<img width="312" height="312" alt="grafik" src="https://github.com/user-attachments/assets/15aba18a-49be-4d16-b3b7-ab318782adf2" />
+
