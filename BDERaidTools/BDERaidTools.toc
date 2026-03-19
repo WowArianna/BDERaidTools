@@ -2,7 +2,7 @@
 ## Title: BDE Raid Tools
 ## Notes: Utility Addon because Weakaura is dead
 ## Author: WowArianna
-## Version: 1.0
+## Version: 1.0.1
 ## DefaultState: Enabled
 ## IconTexture: 3750311
 ## SavedVariables: BDE_RAID_TOOLS_DB
@@ -12,3 +12,4 @@ options.lua
 mplus.lua
 jesus.lua
 cursor.lua
+shutupbrann.lua
