@@ -1,14 +1,16 @@
 local ADDON_NAME, ns = ...
 
--- SavedVariable default
-BDE_RAID_TOOLS_DB = BDE_RAID_TOOLS_DB or {
+local defaults = {
     MPLUS_SCORE_ENABLED = false,
     JESUS_ENABLED = true,
     CURSOR_CIRCLE = false,
+    SHUTUP_BRANN = true,
 }
 
-BDE_RAID_TOOLS = BDE_RAID_TOOLS or {}
+-- SavedVariable default
+BDE_RAID_TOOLS_DB = BDE_RAID_TOOLS_DB or defaults
 
+BDE_RAID_TOOLS = BDE_RAID_TOOLS or {}
 
 -- local frame = CreateFrame("Frame")
 -- frame:RegisterEvent("ADDON_LOADED")
@@ -20,6 +22,24 @@ BDE_RAID_TOOLS = BDE_RAID_TOOLS or {}
 --
 --     self:UnregisterEvent("ADDON_LOADED")
 -- end)
+
+local function MergeDefaults(db, defaults)
+    for k, v in pairs(defaults) do
+        if db[k] == nil then
+            db[k] = v
+        end
+    end
+end
+
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("ADDON_LOADED")
+frame:SetScript("OnEvent", function(self, event, addon)
+    if addon ~= ADDON_NAME then return end
+
+    -- resync the addon db (updates the defaults)
+    MergeDefaults(BDE_RAID_TOOLS_DB, defaults)
+end)
 
 ---------------------------------------------------------
 -- Debug Function
