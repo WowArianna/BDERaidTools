@@ -34,3 +34,7 @@ The tooltip is only displayed when:
 
 <img width="312" height="312" alt="grafik" src="https://github.com/user-attachments/assets/15aba18a-49be-4d16-b3b7-ab318782adf2" />
 
+## Shut Up Brann
+
+Mutes voice lines of brann
+
