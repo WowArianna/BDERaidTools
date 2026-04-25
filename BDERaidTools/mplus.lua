@@ -54,13 +54,27 @@ local chIdToName = function(id)
 end
 
 -- Tooltip Hook
-local function OnTooltipSetUnit(self)
+local function OnTooltipSetUnit(self, data)
     if not BDE_RAID_TOOLS_DB.MPLUS_SCORE_ENABLED then return end
-
-    local unitName, unit = self:GetUnit()
-    if issecretvalue and issecretvalue(unit) then return end
+    if not data or not data.guid then return end
     if UnitAffectingCombat("player") then return end
+
+    local owner = self:GetOwner()
+    local unit = "mouseover"
+    if owner and owner.unit then
+        unit = owner.unit
+    end
+
+    if issecretvalue and issecretvalue(unit) then return end
+    if issecretvalue and issecretvalue(data.guid) then return end
     if not type(unit) == "string" then return end
+    if UnitGUID(unit) ~= data.guid then
+        if UnitGUID("mouseover") == data.guid then
+            unit = "mouseover"
+        else
+            return
+        end
+    end
 
     if UnitIsPlayer(unit) then
         local data = C_PlayerInfo.GetPlayerMythicPlusRatingSummary(unit)

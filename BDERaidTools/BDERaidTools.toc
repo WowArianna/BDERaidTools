@@ -1,4 +1,4 @@
-## Interface: 120000
+## Interface: 120005
 ## Title: BDE Raid Tools
 ## Notes: Utility Addon because Weakaura is dead
 ## Author: WowArianna
